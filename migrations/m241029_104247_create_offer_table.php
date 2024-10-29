@@ -12,7 +12,7 @@ class m241029_104247_create_offer_table extends Migration
      */
     public function safeUp()
     {
-        $this->createTable('{{%offer}}', [
+        $this->createTable('{{%offers}}', [
             'id' => $this->primaryKey(),
             'title' => $this->string()->notNull()->comment('Название оффера'),
             'email' => $this->string(191)->notNull()->unique()->comment('Email представителя'),
@@ -20,7 +20,7 @@ class m241029_104247_create_offer_table extends Migration
             'created_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP')->comment('Дата добавления'),
         ]);        
 
-        $this->createIndex('idx-offer-email', '{{%offer}}', 'email', true);
+        $this->createIndex('idx-offers-email', '{{%offers}}', 'email', true);
     }
 
     /**
@@ -28,6 +28,6 @@ class m241029_104247_create_offer_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('{{%offer}}');
+        $this->dropTable('{{%offers}}');
     }
 }

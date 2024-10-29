@@ -15,7 +15,7 @@ class OfferController extends Controller
 
         for ($i = 0; $i < $count; $i++) {
             try {
-                Yii::$app->db->createCommand()->insert('offer', [
+                Yii::$app->db->createCommand()->insert('offers', [
                     'title' => $faker->company,
                     'email' => $faker->unique()->companyEmail,
                     'phone' => $faker->optional()->phoneNumber,

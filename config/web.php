@@ -6,6 +6,7 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'defaultRoute' => 'offer/index',
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -34,23 +35,25 @@ $config = [
             'useFileTransport' => true,
         ],
         'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
                     'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
+                    'levels' => ['error', 'warning'], // Уровни логов
+                    'logFile' => '@runtime/logs/app.log', // Путь к файлу логов
+                    'maxFileSize' => 1024, // Максимальный размер файла логов в килобайтах
+                    'maxLogFiles' => 5, // Количество архивных файлов логов
                 ],
             ],
         ],
         'db' => $db,
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
+       'urlManager' => [
+        'enablePrettyUrl' => true,
+        'showScriptName' => false,
+        'rules' => [
+            'offer/edit' => 'offer/edit',
+            'offer/delete' => 'offer/delete',
         ],
-        */
+    ],
     ],
     'params' => $params,
 ];
