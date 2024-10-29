@@ -8,6 +8,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'defaultRoute' => 'offer/index',
     'bootstrap' => ['log'],
+    'language' => 'ru-RU',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
