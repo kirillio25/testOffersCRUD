@@ -23,3 +23,11 @@ php yii serve --port=8080
 php yii migrate --interactive=0 --appconfig=config/test_migrate.php
 
 php vendor/bin/codecept run
+
+# Скриншоты
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
