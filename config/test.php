@@ -14,7 +14,13 @@ return [
     ],
     'language' => 'en-US',
     'components' => [
-        'db' => $db,
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=testOffersCRUD_test', 
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+        ],
         'mailer' => [
             'useFileTransport' => true,
         ],
@@ -26,7 +32,9 @@ return [
             'showScriptName' => true,
         ],
         'user' => [
+            'class' => 'yii\web\User',
             'identityClass' => 'app\models\User',
+            'enableAutoLogin' => false,
         ],
         'request' => [
             'cookieValidationKey' => 'test',

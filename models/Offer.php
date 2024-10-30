@@ -29,12 +29,10 @@ class Offer extends ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'email'], 'required'], 
-            ['email', 'email'], 
-            ['email', 'unique'],
-            [['title', 'email'], 'string', 'max' => 255], 
-            ['phone', 'string', 'max' => 20], 
-            [['created_at'], 'safe'], 
+            [['title', 'email'], 'required', 'message' => 'Это поле обязательно для заполнения'],
+            ['email', 'email', 'message' => 'Некорректный формат email'],
+            ['email', 'unique', 'message' => 'Этот email уже используется'], 
+            ['phone', 'string', 'max' => 15, 'message' => 'Телефон должен быть не длиннее 15 символов'],
         ];
     }
 

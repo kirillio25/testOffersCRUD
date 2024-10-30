@@ -6,6 +6,7 @@
                 <h5 class="modal-title" id="editModalLabel">Редактировать Оффер</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div id="validation-errors" style="display:none;"></div>
             <div class="modal-body">
                 <form id="edit-form">
                     <input type="hidden" id="edit-id">
